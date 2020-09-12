@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
 
 """
-=========
-Homespace
-=========
+=====
+Adviz
+=====
 
-A toolbox to scrape, visualize and evaluate second hand ads.
+Score the scraped items to assess:
+- leveraging power
+- value: relevance to your goal
+- price honesty
 """
 
 from __future__ import division, print_function, absolute_import
@@ -14,9 +17,9 @@ from importlib.metadata import version
 __author__ = 'apehex'
 __email__ = 'apehex@protonmail.com'
 __version__ = version(__package__)
-__title__ = 'homespace'
-__description__ = 'A toolbox to scrape and visualize second hand ads.'
-__url__ = 'https://github/apehex/homespace'
+__title__ = 'adviz.scoring'
+__description__ = 'Solid reasons to show after the fact!'
+__url__ = 'https://github/apehex/adviz'
 __license__ = 'MIT license'
 
 __all__ = []

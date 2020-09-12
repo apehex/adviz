@@ -12,7 +12,7 @@ from __future__ import absolute_import, division, print_function
 
 import pandas as pd
 
-from homespace._wrangling import format_number, format_text
+from adviz._wrangling import format_number, format_text
 
 #####################################################################
 # META DATA

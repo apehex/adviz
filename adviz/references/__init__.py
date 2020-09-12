@@ -5,7 +5,7 @@
 References
 ==========
 
-Load the data references.
+Solid reasons to show after the fact!
 """
 
 from __future__ import absolute_import, division, print_function
@@ -23,6 +23,10 @@ import pandas as pd
 __author__ = 'apehex'
 __email__ = 'apehex@protonmail.com'
 __version__ = version(__package__)
+__title__ = 'adviz.references'
+__description__ = 'Solid reasons to show after the fact!'
+__url__ = 'https://github/apehex/adviz'
+__license__ = 'MIT license'
 
 __all__ = []
 
