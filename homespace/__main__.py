@@ -10,29 +10,32 @@ Console script.
 
 from __future__ import absolute_import, division, print_function
 
-import click
+import argparse
 
 #####################################################################
 # CLI
 #####################################################################
 
-@click.command()
-def main(args=None):
+def main():
     """
-    An alternative to the scrapy shell / scrapy crawl.
-    Allows to launch several scraping jobs at once.
+    Configure maps and charts from the cli.
 
     Parameters
     ----------
-    args: None.
-    
+
     Returns
     -------
     out: None.
     """
-    click.echo("Replace this message by putting your code into "
-               "homespace.cli.main")
-    click.echo("See click documentation at http://click.pocoo.org/")
+    parser = argparse.ArgumentParser(
+        description='Solid reasons to show after the fact!')
+    parser.add_argument(
+        '-h',
+        '--help',
+        help='Display this help message.',
+        required=False)
+
+    args = parser.parse_args()
 
 if __name__ == "__main__":
     main()
