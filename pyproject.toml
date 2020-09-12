@@ -1,30 +1,23 @@
 [tool.poetry]
 name = "adviz"
-version = "0.1.1"
-description = "Find the best deals on second-hand ads websites :dart:"
+version = "0.1.0"
+description = ":bar_chart: Solid reasons to show after the fact!"
 license = "MIT"
 authors = ["apehex <apehex@protonmail.com>"]
 readme = ".github/README.rst"
 repository = "https://github.com/apehex/adviz.git"
-keywords = ["scraping", "scrapy-crawler", "second-hand ads", "real-estate"]
-classifiers = [
-  "Development Status :: 3 - Alpha",
-  "Framework :: Scrapy",
-]
+keywords = ["dataviz", "machine-learning"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-beautifulsoup4 = "*"
 geopy = "*"
 googlemaps = {version = "*", optional = true}
 nltk = "*"
-numpy = {version = "*", optional = true}
-pandas = {version = "*", optional = true}
+numpy = "*"
+pandas = "*"
 pymongo = "*"
-scrapy = "*"
 
 [tool.poetry.dev-dependencies]
-pytest = "*"
 flake8 = "*"
 sphinx = "*"
 

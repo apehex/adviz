@@ -10,7 +10,6 @@ Clean the raw data scraped from the web.
 
 from __future__ import absolute_import, division, print_function
 
-from bs4 import BeautifulSoup
 from datetime import datetime
 from nltk.metrics.distance import edit_distance
 import numpy as np
@@ -225,95 +224,6 @@ def remove_special_characters(
         '\W+',
         '',
         text)
-
-#####################################################################
-# HTML
-#####################################################################
-
-def extract_text_from_html_markup(
-        html: str) -> str:
-    """
-    Extract the text *visible* to a user on an internet browser,
-    from a string of html markup.
-    The chunks of text are separated by newlines.
-
-    Parameters
-    ----------
-    html: str.
-        A string of html markup soup.
-    Returns
-    -------
-    out: str.
-        The visible text.
-    """
-    __soup = BeautifulSoup(markup=html, features="lxml")
-
-    # kill all script and style elements
-    for script in __soup(["script", "style"]):
-        script.extract()    # rip it out
-
-    # get text
-    __text = __soup.get_text(separator='.')
-
-    # break into lines and remove leading and trailing space on each
-    __lines = (
-        __line.strip()
-        for __line in __text.splitlines())
-    # break multi-headlines into a line each
-    __chunks = (
-        __phrase.strip()
-        for __line in __lines
-        for __phrase in __line.split("."))
-    # drop blank lines
-    return '\n'.join(
-        __chunk
-        for __chunk in __chunks if __chunk)
-
-def prettify_html(
-        html: str) -> str:
-    """
-    Expand the html markup formatting:
-    - break lines on opening tags
-    - indent lines
-
-    Parameters
-    ----------
-    html: str.
-        A string of html markup soup.
-    Returns
-    -------
-    out: str.
-        The beautified html.
-    """
-    return BeautifulSoup(
-        markup=html,
-        features="lxml").prettify()
-
-def serialize_html_tag(
-        tag: str,
-        value: str = '',
-        attributes: dict = {}) -> str:
-    """
-    Serialize any tag as a string.
-
-    Parameters
-    ----------
-    tag: str.
-        The HTML tag type.
-    value: str.
-        The text enclosed in the tag.
-
-    Returns
-    -------
-    out: str.
-        The serialized HTML tag.
-    """
-    return '{}{}{}'.format(
-        tag.replace(
-            '>',
-            ' ' + ' '.join(['{}="{}"'.format(k, v) for k, v in attributes.items()]) + '>'),
-        value,
-        tag.replace('<', '</'))
 
 #####################################################################
 # DATA MINING
