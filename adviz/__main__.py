@@ -30,9 +30,9 @@ def main():
     parser = argparse.ArgumentParser(
         description='Solid reasons to show after the fact!')
     parser.add_argument(
-        '-h',
-        '--help',
-        help='Display this help message.',
+        '-e',
+        '--estimate',
+        help='Estimate the price of an ad.',
         required=False)
 
     args = parser.parse_args()
