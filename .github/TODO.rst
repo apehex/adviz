@@ -111,6 +111,7 @@ DATAVIZ
 
 - [ ] plot the ad price vs most characteristics
 - [ ] plot the averages / stds
+- [ ] locate the ads on a map
 
 ******
 MINING

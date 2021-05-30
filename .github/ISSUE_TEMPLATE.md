@@ -1,4 +1,4 @@
-* Adviz apehex version:
+* Adviz version:
 * Python version:
 * Operating System:
 
